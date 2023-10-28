@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat",sans-serif;
+}
+body{
+background: #EEE;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+input{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+button{
+    border: none;
+    outline: none;
+}
+ section{
+    /* width: 400px; */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+ }
+ h3{
+    color: gray;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+ }
+ h4{
+    color: grey;
+    font-size: 0.800rem;
+    margin-bottom: 0.5rem;
+ }
+ .welcome .title{
+    display: flex;
+ }
+ .welcome .title,
+ .welcome .title input{
+    color:black ;
+    font-size: 1.5rem;
+    font-weight: 700;
+ }
+ .create-todo input{
+    padding: 1.5rem;
+    background: #fff;
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 20px;
+ }
+
+ .create-todo input[type="text"]{
+    display: block;
+    width:100%;
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+    background-color: 0.5rem;
+    box-shadow: darkblue;
+    margin-bottom: 1.5rem;
+ }
+ .options{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    /* width: 20%; */
+    grid-gap: 1rem;
+    margin-bottom: 1.5rem;
+
+ }
+ .options label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: palevioletred;
+    margin-top: 20px;
+ }
+ input[type="radio"],
+ input[type="checkbox"]{
+    display: none;
+ }
+
+ .type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border:2px solid #3a82ee;
+    box-shadow: 0px 0px 4px rgba(58,130,238,0.75);
+ }
+.type.personal{
+    border-color:#EA40A4;
+    box-shadow:0px 0px 4px rgba(234,64,164,0.75);
+
+}
+.type::after{
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: #3a82ee;
+    box-shadow: 0px 0px 4px rgba(58,130,238,0.75);
+    border-radius: 50%;
+    transition: .3s ease-in-out;
+}
+.type.personal::after{
+    background-color: #EA40A4;
+    box-shadow:0px 0px 4px rgba(234,64,164,0.75);
+}
+
+input:checked ~ .type::after{
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+.create-todo .options label div{
+    color: black;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+.create-todo input[type=submit]{
+    display: block;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    color: #fff;
+    background-color: blue;
+    border-radius: 0.5rem;
+    transition: .2s ease-in-out;
+}
+.todo-list .list{
+    margin: 1rem 0;
+}
+.todo-list .todo-item{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+.todo-item label{
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.todo-item .todo-content{
+    flex: 1 1 0%;
+}
+
+.todo-item .todo-content input{
+    font-size: 1.2rem;
+}
+
+.todo-item .actions{
+    display: flex;
+    align-items: center;
+}
+
+.todo-item .actions button{
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.todo-item .actions button:hover{
+    opacity: 0.75;
+}
+
+.todo-item .actions .edit{
+    margin-right: 0.5rem;
+    background-color: #EA40A4;
+}
+.todo-item .actions .delete{
+    background-color: #ff5b57;
+}
+.todo-item.done .todo-content input{
+    text-decoration: line-through;
+    color: gray;
+}
